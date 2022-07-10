@@ -1,3 +1,5 @@
+namespace Foothold.Geometry;
+
 public struct Segment2D
 {
     public Point2D P1 { get; }
