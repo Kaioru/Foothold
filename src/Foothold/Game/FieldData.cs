@@ -4,7 +4,6 @@ namespace Foothold.Game;
 
 public record FieldData : IData
 {
-
     public int ID { get; }
     public IDictionary<int, IFoothold> Footholds { get; }
 

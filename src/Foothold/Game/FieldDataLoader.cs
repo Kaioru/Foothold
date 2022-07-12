@@ -1,6 +1,5 @@
 using Duey;
 using Foothold.Data;
-using Foothold.Geometry;
 
 namespace Foothold.Game;
 
