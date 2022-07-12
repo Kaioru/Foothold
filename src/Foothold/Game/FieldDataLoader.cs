@@ -1,5 +1,6 @@
 using Duey;
 using Foothold.Data;
+using Foothold.Geometry;
 
 namespace Foothold.Game;
 
@@ -10,14 +11,22 @@ public class FieldDataLoader : IDataLoader<FieldData>
     public FieldDataLoader(NXFile file)
         => _file = file;
 
-    public async Task<FieldData> Load(int id)
+    public Task<FieldData> Load(int id)
     {
-        Console.WriteLine($"Map/Map{Math.Floor(id / 100000000d)}/{id.ToString().PadLeft(9, '0')}.img");
-        //var node = _file.ResolvePath($"Map/Map{Math.Floor(id / 100000000d)}/{id.ToString().PadLeft(9, '0')}.img");
+        var node = _file.ResolvePath($"Map/Map{Math.Floor(id / 100000000d)}/{id.ToString().PadLeft(9, '0')}.img");
+        var nodeFh = node.ResolvePath("foothold").ResolveAll();
 
-        return new FieldData
-        {
-            ID = id
-        };
+        var footholds = nodeFh.ToDictionary(
+            p => Convert.ToInt32(p.Name),
+            p => (IFoothold)new Foothold(
+                Convert.ToInt32(p.Name),
+                new(
+                    new(p.Resolve<int>("x1") ?? 0, p.Resolve<int>("y1") ?? 0),
+                    new(p.Resolve<int>("x2") ?? 0, p.Resolve<int>("y2") ?? 0)
+                )
+            )
+        );
+
+        return Task.FromResult(new FieldData(id, footholds));
     }
 }
