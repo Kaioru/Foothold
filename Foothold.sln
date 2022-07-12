@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F492824-179
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foothold", "src\Foothold\Foothold.csproj", "{03A169E1-0F32-4A48-9E6E-24FD917DB073}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foothold.Playground", "src\Foothold.Playground\Foothold.Playground.csproj", "{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{03A169E1-0F32-4A48-9E6E-24FD917DB073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03A169E1-0F32-4A48-9E6E-24FD917DB073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03A169E1-0F32-4A48-9E6E-24FD917DB073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03A169E1-0F32-4A48-9E6E-24FD917DB073} = {4F492824-179C-47AB-850B-A88EB51BB212}
+		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B} = {4F492824-179C-47AB-850B-A88EB51BB212}
 	EndGlobalSection
 EndGlobal
