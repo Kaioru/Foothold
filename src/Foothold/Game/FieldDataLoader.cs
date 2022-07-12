@@ -10,7 +10,7 @@ public class FieldDataLoader : IDataLoader<FieldData>
     public FieldDataLoader(NXFile file)
         => _file = file;
 
-    public Task<FieldData> Load(int id)
+    public FieldData Load(int id)
     {
         var node = _file.ResolvePath($"Map/Map{Math.Floor(id / 100000000d)}/{id.ToString().PadLeft(9, '0')}.img");
         var nodeFh = node.ResolvePath("foothold").ResolveAll();
@@ -29,6 +29,6 @@ public class FieldDataLoader : IDataLoader<FieldData>
             )
         );
 
-        return Task.FromResult(new FieldData(id, footholds));
+        return new FieldData(id, footholds);
     }
 }
