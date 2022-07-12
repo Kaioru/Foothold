@@ -14,8 +14,17 @@ public struct Segment2D
     public bool IsVertical => P1.X == P1.X;
     public bool IsHorizontal => P1.Y == P2.Y;
 
+    public bool IsAbove(Point2D point)
+        => Cross(point) > 0;
+
+    public bool IsBelow(Point2D point)
+        => Cross(point) > 0;
+
     public bool Intersects(Point2D point)
         => point.Distance(P1) + point.Distance(P2) == P1.Distance(P2);
+
+    public int Cross(Point2D point)
+        => (point.X - P1.X) * (P2.Y - P1.Y) - (point.Y - P1.Y) * (P2.X - P1.X);
 
     public override string ToString()
         => $"{P1} -> {P2}";

@@ -10,6 +10,12 @@ public struct Point2D
     public double Distance(Point2D point)
         => Math.Sqrt(Math.Pow(X - point.X, 2) + Math.Pow(Y - point.Y, 2));
 
+    public bool IsAbove(Segment2D segment)
+        => segment.IsBelow(this);
+
+    public bool IsBelow(Segment2D segment)
+        => segment.IsAbove(this);
+
     public bool Intersects(Segment2D segment)
         => segment.Intersects(this);
 
