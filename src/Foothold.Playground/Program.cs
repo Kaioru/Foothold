@@ -10,4 +10,5 @@ Console.WriteLine(data);
 
 var line = new Segment2D(new(0, 1), new(2, 3));
 
-Console.WriteLine(line.Middle);
+Console.WriteLine(line.Middle.Intersects(line));
+Console.WriteLine(new Point2D(0, 0).Intersects(line));
