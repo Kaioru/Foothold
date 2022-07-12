@@ -4,7 +4,7 @@ namespace Foothold.Game;
 
 public interface IField
 {
-    Segment2D? FindClosest(Point2D point);
-    Segment2D? FindUnderneath(Point2D point);
-    Segment2D? FindBelow(Point2D point);
+    IFoothold? FindClosest(Point2D point);
+    IFoothold? FindBelow(Point2D point);
+    IFoothold? FindUnderneath(Point2D point);
 }
