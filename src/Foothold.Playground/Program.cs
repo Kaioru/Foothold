@@ -1,17 +1,21 @@
-﻿using Duey;
+﻿using System.Diagnostics;
+using Duey;
+using Foothold.Algo.RBush;
 using Foothold.Game;
 using Foothold.Geometry;
 
 var file = new NXFile("../../data/Map.nx");
 var loader = new FieldDataLoader(file);
 var data = await loader.Load(310000000);
+var field = new RBushField(data);
 
-Console.WriteLine(data);
+var stopwatch = Stopwatch.StartNew();
 
-var line = new Segment2D(new(0, 1), new(2, 3));
+Console.WriteLine(data.Footholds.Skip(13).First().Value.ID);
+Console.WriteLine(data.Footholds.Skip(13).First().Value.Segment);
+Console.WriteLine(data.Footholds.Skip(13).First().Value.Segment.Middle);
+Console.WriteLine(field.FindFootholdUnderneath(data.Footholds.Skip(13).First().Value.Segment.Middle)?.ID);
 
-Console.WriteLine(line.Middle.Intersects(line));
-Console.WriteLine(new Point2D(0, 0).Intersects(line));
+Console.WriteLine($"{stopwatch.ElapsedMilliseconds}ms");
 
-Console.WriteLine(new Point2D(0, 0).IsBelow(line));
-Console.WriteLine(new Point2D(0, 2).IsBelow(line));
+Console.WriteLine(field.FindFootholdClosest(new(0, 0))?.ID);

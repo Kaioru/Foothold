@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foothold", "src\Foothold\Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foothold.Playground", "src\Foothold.Playground\Foothold.Playground.csproj", "{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foothold.Algo.RBush", "src\Foothold.Algo.RBush\Foothold.Algo.RBush.csproj", "{BF8B2973-828B-4357-9C19-25BD27F8012E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF8B2973-828B-4357-9C19-25BD27F8012E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8B2973-828B-4357-9C19-25BD27F8012E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8B2973-828B-4357-9C19-25BD27F8012E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8B2973-828B-4357-9C19-25BD27F8012E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03A169E1-0F32-4A48-9E6E-24FD917DB073} = {4F492824-179C-47AB-850B-A88EB51BB212}
 		{1E0E125C-2A92-4D42-8E6C-0D8FDFD48D5B} = {4F492824-179C-47AB-850B-A88EB51BB212}
+		{BF8B2973-828B-4357-9C19-25BD27F8012E} = {4F492824-179C-47AB-850B-A88EB51BB212}
 	EndGlobalSection
 EndGlobal
