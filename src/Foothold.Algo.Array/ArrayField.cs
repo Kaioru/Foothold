@@ -19,7 +19,7 @@ public class ArrayField : IField
             .FirstOrDefault();
 
     public IFoothold? FindFootholdBelow(Point2D point)
-        => _data.Footholds.Values
+        => _data.Footholds.Values // TODO: check for within x
             .Where(f => f.Segment.IsBelow(point))
             .OrderBy(f => f.Segment.Middle.Distance(point))
             .FirstOrDefault();
