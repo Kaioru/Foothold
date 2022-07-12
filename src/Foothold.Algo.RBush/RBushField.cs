@@ -18,7 +18,9 @@ public class RBushField : IField
     }
 
     public IFoothold? FindFootholdClosest(Point2D point)
-        => _bush.Knn(1, point.X, point.Y).Select(d => d.Foothold).FirstOrDefault();
+        => _bush.Knn(1, point.X, point.Y)
+                .Select(d => d.Foothold)
+                .FirstOrDefault();
 
     public IFoothold? FindFootholdBelow(Point2D point)
     {
@@ -27,5 +29,8 @@ public class RBushField : IField
     }
 
     public IFoothold? FindFootholdUnderneath(Point2D point)
-        => _bush.Search(new(point.X, point.Y, point.X, point.Y)).Select(d => d.Foothold).FirstOrDefault();
+        => _bush.Search(new(point.X, point.Y, point.X, point.Y))
+                .Select(d => d.Foothold)
+                .Where(f => point.Intersects(f.Segment))
+                .FirstOrDefault();
 }
