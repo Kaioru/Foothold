@@ -7,4 +7,7 @@ public struct Point2D
 
     public Point2D(int x, int y) { X = x; Y = y; }
     public Point2D(float x, float y) { X = x; Y = y; }
+
+    public override string ToString()
+        => $"({X}, {Y})";
 }
