@@ -11,7 +11,7 @@ public struct Segment2D
 
     public double Length => P1.Distance(P2);
     public double Slope => IsVertical ? 0 : (P2.Y - P1.Y) / (P2.X - P1.X);
-    public bool IsVertical => P1.X == P1.X;
+    public bool IsVertical => P1.X == P2.X;
     public bool IsHorizontal => P1.Y == P2.Y;
 
     public bool IsAbove(Point2D point)
