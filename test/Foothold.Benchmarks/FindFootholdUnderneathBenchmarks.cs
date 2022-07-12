@@ -1,5 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using Duey;
+using Foothold.Algo.Array;
 using Foothold.Algo.RBush;
 using Foothold.Game;
 using Foothold.Geometry;
@@ -10,6 +11,7 @@ namespace Foothold.Benchmarks;
 public class FindFootholdUnderneathBenchmarks
 {
     private FieldData data;
+    private ArrayField array;
     private RBushField rbush;
 
     public IEnumerable<Point2D> Values => new Point2D[] {
@@ -27,8 +29,12 @@ public class FindFootholdUnderneathBenchmarks
         var loader = new FieldDataLoader(new NXFile("Map.nx"));
 
         data = loader.Load(310000000);
+        array = new ArrayField(data);
         rbush = new RBushField(data);
     }
+
+    [Benchmark]
+    public IFoothold? Array() => array.FindFootholdUnderneath(Point);
 
     [Benchmark]
     public IFoothold? RBush() => rbush.FindFootholdUnderneath(Point);

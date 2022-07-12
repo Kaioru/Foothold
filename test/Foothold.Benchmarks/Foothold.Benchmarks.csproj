@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Foothold\Foothold.csproj" />
     <ProjectReference Include="..\..\src\Foothold.Algo.RBush\Foothold.Algo.RBush.csproj" />
+    <ProjectReference Include="..\..\src\Foothold.Algo.Array\Foothold.Algo.Array.csproj" />
   </ItemGroup>
 
   <ItemGroup>
