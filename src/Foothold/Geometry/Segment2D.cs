@@ -18,7 +18,7 @@ public struct Segment2D
         => Cross(point) > 0;
 
     public bool IsBelow(Point2D point)
-        => Cross(point) > 0;
+        => Cross(point) < 0;
 
     public bool Intersects(Point2D point)
         => point.Distance(P1) + point.Distance(P2) == P1.Distance(P2);
