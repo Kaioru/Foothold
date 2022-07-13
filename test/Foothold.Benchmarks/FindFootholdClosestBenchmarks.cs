@@ -11,7 +11,7 @@ namespace Foothold.Benchmarks;
 
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 [RankColumn(NumeralSystem.Arabic)]
-public class FindFootholdUnderneathBenchmarks
+public class FindFootholdClosestBenchmarks
 {
     private FieldData data;
     private ArrayField array;
@@ -19,7 +19,7 @@ public class FindFootholdUnderneathBenchmarks
 
     public IEnumerable<Point2D> Values => new Point2D[] {
         new (0, 0),
-        new (429, 298),
+        new (429, 290),
         new (9000, 9000),
     };
 
@@ -37,8 +37,8 @@ public class FindFootholdUnderneathBenchmarks
     }
 
     [Benchmark]
-    public IFoothold? Array() => array.FindFootholdUnderneath(Point);
+    public IFoothold? Array() => array.FindFootholdClosest(Point);
 
     [Benchmark]
-    public IFoothold? RBush() => rbush.FindFootholdUnderneath(Point);
+    public IFoothold? RBush() => rbush.FindFootholdClosest(Point);
 }
