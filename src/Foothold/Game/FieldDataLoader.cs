@@ -13,6 +13,7 @@ public class FieldDataLoader : IDataLoader<FieldData>
     public FieldData Load(int id)
     {
         var node = _file.ResolvePath($"Map/Map{Math.Floor(id / 100000000d)}/{id.ToString().PadLeft(9, '0')}.img");
+        var nodeInfo = node.ResolvePath("info").ResolveAll();
         var nodeFh = node.ResolvePath("foothold").ResolveAll();
 
         var footholds = nodeFh
@@ -29,6 +30,11 @@ public class FieldDataLoader : IDataLoader<FieldData>
             )
         );
 
-        return new FieldData(id, footholds);
+        var vrLeft = nodeInfo.Resolve<int>("VRLeft");
+        var vrTop = nodeInfo.Resolve<int>("VRTop");
+        var vrRight = nodeInfo.Resolve<int>("VRRight");
+        var vrBottom = nodeInfo.Resolve<int>("VRBottom");
+
+        return new FieldData(id, vrLeft, vrTop, vrRight, vrBottom, footholds);
     }
 }

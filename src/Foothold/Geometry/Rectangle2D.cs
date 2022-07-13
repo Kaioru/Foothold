@@ -21,4 +21,7 @@ public struct Rectangle2D
             point.X <= Right &&
             point.Y >= Top &&
             point.Y <= Bottom;
+
+    public override string ToString()
+        => $"{P1} -> {P2} ({Height}x{Width})";
 }
