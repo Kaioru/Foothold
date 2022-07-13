@@ -19,6 +19,9 @@ public struct Point2D
     public bool Intersects(Segment2D segment)
         => segment.Intersects(this);
 
+    public bool Intersects(Rectangle2D rectangle)
+        => rectangle.Intersects(this);
+
     public override string ToString()
         => $"({X}, {Y})";
 }
