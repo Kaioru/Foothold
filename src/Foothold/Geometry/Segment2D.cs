@@ -27,5 +27,5 @@ public struct Segment2D
         => (point.X - P1.X) * (P2.Y - P1.Y) - (point.Y - P1.Y) * (P2.X - P1.X);
 
     public override string ToString()
-        => $"{P1} -> {P2}";
+        => $"Segment {P1} -> {P2}";
 }

@@ -23,5 +23,5 @@ public struct Point2D
         => rectangle.Intersects(this);
 
     public override string ToString()
-        => $"({X}, {Y})";
+        => $"Point ({X}, {Y})";
 }

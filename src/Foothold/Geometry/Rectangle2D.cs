@@ -23,5 +23,5 @@ public struct Rectangle2D
             point.Y <= Bottom;
 
     public override string ToString()
-        => $"{P1} -> {P2} ({Height}x{Width})";
+        => $"Rectangle {P1} -> {P2} ({Height}x{Width})";
 }
