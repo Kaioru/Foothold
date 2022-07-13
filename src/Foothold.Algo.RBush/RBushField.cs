@@ -23,10 +23,10 @@ public class RBushField : IField
                 .FirstOrDefault();
 
     public IFoothold? FindFootholdBelow(Point2D point)
-    {
-        // TODO
-        throw new NotImplementedException();
-    }
+        => _bush.Search(new(point.X, point.Y, point.X, _data.Bounds.Bottom))
+                .Select(d => d.Foothold)
+                .OrderBy(f => f.Segment.Middle.Distance(point))
+                .FirstOrDefault();
 
     public IFoothold? FindFootholdUnderneath(Point2D point)
         => _bush.Search(new(point.X, point.Y, point.X, point.Y))
