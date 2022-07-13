@@ -1,12 +1,14 @@
 # Foothold
 2D plane geometry benchmarks and experiments for a 2D game
 
-## 🤔 Methods
+## 🤔 Rundown
 The current benchmarks tests against:
 * [RBush](https://github.com/viceroypenguin/RBush)
 * Plain ol' Array
 
 There are plans to benchmark BST and QuadTrees as well.
+
+Benchmarks are also run on an exported v95.1 map of ID: 310000000 (iykyk)
 
 ## 📋 Benchmarks
 All benchmarks published on this page is ran on the following specifications.
